@@ -44,7 +44,7 @@ The Streamlit app fetches view results using Snowpark:
 
     rev = session.sql("SELECT * FROM ...").to_pandas()
 
-This ensures:
+This ensures-
 	•	zero external compute
 	•	secure, in-warehouse execution
 	•	low-latency analysis
@@ -55,22 +55,22 @@ This ensures:
 
 The reasoning system includes four core agents:
 
-Router
+Router:
 Classifies the incoming question as:
 	•	simple → requires no planning
 	•	reasoning → requires multistep analysis
 
-Planner
+Planner:
 Uses Cortex LLM to generate:
 	•	sub-questions
 	•	a structured JSON reasoning plan tied to quarter/region/product analytics
 
-Executor
+Executor:
 Runs Snowflake analytics based on the plan:
 	•	fetches relevant SQL views
 	•	builds structured evidence objects
 
-Synthesizer
+Synthesizer:
 Calls Cortex again with:
 	•	the user question
 	•	the generated plan
@@ -136,7 +136,7 @@ README.md
 
 ⸻
 
-# 🚀 How It Works (High-Level Workflow)
+# How It Works (High-Level Workflow)
 	1.	User submits a business question
 	2.	Router classifies it as simple or reasoning
 	3.	If reasoning:
